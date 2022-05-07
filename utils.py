@@ -109,7 +109,7 @@ def upload_file_to_bucket(obj: dict[str, str], filename: str) -> None:
     new_file = filename.split('.')[0]
     
     # Put the JSON object to the bucket
-    s3.Bucket('resumes-follow-up').put_object(
+    s3.Bucket('YOUR_BUCKET_NAME').put_object(
         Body=dumps(obj),
         Key=f'{new_file}_{int(time())}.json',
         ContentType='application/json'
